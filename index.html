@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Modeling in MiMoText</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/simple.css" id="theme">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+<body>
+	<div class="reveal">
+	<div class="slides">
+
+<section data-markdown=""
+         data-separator="^\n--\n" 
+         data-separator-vertical="^\n---\n" 
+         data-charset="utf-8" 
+         data-background-image="img/basics/uni-trier_icon.png" 
+         data-background-size="70px" 
+         data-background-position="right 10px top 10px">
+
+<!-- ============ BEGINNING OF SLIDE CONTENT =========== -->
+
+<textarea data-template>
+
+# Modeling Literary History / Historiography
+<img height="80" data-src="img/basics/mimotext-logo.png">
+<br/>
+<hr/>
+<p>Christof Schöch & Maria Hinzmann,<br/>with contributions from Julia Röttgermann and Katharina Dietz</p>
+<p><strong><emph>Computational Modeling</emph> | Trier University | June 24, 2020</strong></p>
+<hr/>
+<br/>
+<img height="55" data-src="img/basics/tcdh-slim.png">&nbsp;&nbsp;&nbsp;<img height="55" data-src="img/basics/uni-trier.png">
+
+
+--
+## Overview
+1. Modeling in Digital Humanities
+1. Introduction to 'Mining and Modeling Text'
+2. Modeling Literary History
+3. Modeling Literary Historiography
+4. A network of information
+
+--
+## (1) Modeling in Digital Humanities
+
+---
+#### Willard McCarty, *Humanities Computing*, 2004
+<img height="450" data-src="img/mccarty.jpg">
+
+"The residue of uniqueness"
+
+---
+#### Jannidis & Flanders, *The Shape of Data in DH*, 2019
+<img height="450" data-src="img/flanders-jannidis.jpg">
+
+---
+#### MiMoText: overview
+<a href="img/mimotext-overview.png"><img height="500" data-src="img/mimotext-overview.png"></a>
+
+
+--
+## (2) Modeling Literary History
+
+
+---
+### (A) Topic Modeling Novels
+* Corpus design and text encoding <!-- .element: class="fragment" data-fragment-index="1" -->
+* Topic Modeling <!-- .element: class="fragment" data-fragment-index="2" -->
+* Modeling results as Linked Open Data <!-- .element: class="fragment" data-fragment-index="3" -->
+
+
+---
+#### Building a Corpus
+* Aim: 200 volumes of novels (1750-1800)  <!-- .element: class="fragment" data-fragment-index="1" -->
+* Sources: double keying, OCR, portals   <!-- .element: class="fragment" data-fragment-index="2" -->
+* Corpus composition: decades and narrative forms  <!-- .element: class="fragment" data-fragment-index="3" -->  
+* Current pilot corpus: ca. 80 volumes   <!-- .element: class="fragment" data-fragment-index="4" -->  
+* Text encoding <!-- .element: class="fragment" data-fragment-index="5" -->
+  * Files are encoded in XML-TEI <!-- .element: class="fragment" data-fragment-index="6" -->
+  * Modeled following the ELTeC schema <!-- .element: class="fragment" data-fragment-index="7" -->
+
+
+---
+#### Topic Modeling
+<a href="img/tm_blei.png"><img height="500" src="img/tm_blei.png"></img></a>
+
+
+---
+#### First results
+
+
+---
+#### Modeling als LOD 
+<br/>
+
+* Candide HAS_TOPIC 't001_travel' (etc.) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Integration into the database of statements <!-- .element: class="fragment" data-fragment-index="2" -->
+
+
+---
+### (B) Named Entity Recognition
+
+
+
+--
+## (3) Modeling Literary Historiography
+
+---
+### (A) Extracting Statements
+* Define annotation layer with statement types
+* Manually annotate examples of statements
+* Learn to automatically identify instances
+
+
+---
+### (B) Modeling Historiograohy 
+* Which types of statements are necessary?
+* What relations to these types have?
+* How do we create consensus?
+
+
+
+
+--
+## (4) A network of information
+
+
+
+---
+### Bibliography and Novels
+
+* The 'Bibliographie du genre romanesque' contains information on setting and theme/tone <!-- .element: class="fragment" data-fragment-index="1" -->
+* The 'novel analysis' extracts place names and topics <!-- .element: class="fragment" data-fragment-index="2" -->
+* Relations <!-- .element: class="fragment" data-fragment-index="3" -->
+    * 
+
+
+---
+<a href="img/bgrf-Candide.png"><img height="500" src="img/bgrf-Candide.png"></img></a>
+<small>
+(Quelle: Martin, Frautschi, Mylne: Bibliographie<br/> du genre romanesque 1751-1800, 1977, S. 60)</small>
+
+
+---
+### Teilprojekt Literaturgeschichten
+
+* Grundlage sind moderne Literaturgeschichten, bspw. Erich Köhler, Aufklärung, 1984 <!-- .element: class="fragment" data-fragment-index="1" -->
+* Fragen <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Dürfen diese Texte analysiert werden?
+    * Dürfen die relevanten Sätze in das Wissenssystem integriert werden?
+
+---
+### Teilprojekt Romane
+
+* Grundlage sind Romane aus der Zeit 1750-1800  <!-- .element: class="fragment" data-fragment-index="1" -->
+* Fragen  <!-- .element: class="fragment" data-fragment-index="2" -->
+    * Dürfen die Originalausgaben digitalisiert und publiziert werden?
+    * Was ist, wenn moderne Ausgaben verwendet werden sollen?  
+    * Können wir Texte von Project Gutenberg verwenden?
+
+
+
+
+</textarea>
+
+<!-- ============ END OF SLIDE CONTENT =========== -->
+
+</section>
+
+	</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+            progress: true,
+            slideNumber: true,
+            fragments: true,
+            center: false,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+		});
+	</script>
+</body>
+</html>
