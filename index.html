@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Modeling in MiMoText</title>
+	<title>Textformate</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
@@ -28,143 +28,278 @@
 
 <textarea data-template>
 
-# Modeling Literary History / Historiography
-<img height="80" data-src="img/basics/mimotext-logo.png">
+<h1>Abgeleitete Textformate</h1>
 <br/>
 <hr/>
-<p>Christof Schöch & Maria Hinzmann,<br/>with contributions from Julia Röttgermann and Katharina Dietz</p>
-<p><strong><emph>Computational Modeling</emph> | Trier University | June 24, 2020</strong></p>
+<br/>
+<p>Christof Schöch</p>
+<br/>
+<p><strong><emph>Digital Humanities and the Law</emph> | Universität Trier | 22. Juni 2020</strong></p>
+<br/>
 <hr/>
 <br/>
-<img height="55" data-src="img/basics/tcdh-slim.png">&nbsp;&nbsp;&nbsp;<img height="55" data-src="img/basics/uni-trier.png">
+<img height="55" data-src="img/basics/uni-trier.png">
 
 
 --
-## Overview
-1. Modeling in Digital Humanities
-1. Introduction to 'Mining and Modeling Text'
-2. Modeling Literary History
-3. Modeling Literary Historiography
-4. A network of information
+## Überblick
+1. [Textanalyse jenseits des Urheberrechts](#/2)
+2. [Abgeleitete Textformate: Vorbilder](#/3)
+3. [Abgeleitete Textformate: Prinzip](#/4)
+3. [Abgeleitete Textformate: Beispiele](#/4)
+4. [Fazit](#/6)
 
 --
-## (1) Modeling in Digital Humanities
+## (1) Textanalyse jenseits des Urheberrechts
 
 ---
-#### Willard McCarty, *Humanities Computing*, 2004
-<img height="450" data-src="img/mccarty.jpg">
-
-"The residue of uniqueness"
-
----
-#### Jannidis & Flanders, *The Shape of Data in DH*, 2019
-<img height="450" data-src="img/flanders-jannidis.jpg">
+#### Ausgangslage
+* Urheberrecht verbietet Verfielfältigung geschützter Texte <!-- .element: class="fragment" data-fragment-index="1" -->
+* TDM-Schranke (§60d UrhG) erlaubt manches, aber mit Bedingungen und Grenzen <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
-#### MiMoText: overview
-<a href="img/mimotext-overview.png"><img height="500" data-src="img/mimotext-overview.png"></a>
-
-
---
-## (2) Modeling Literary History
-
-
----
-### (A) Topic Modeling Novels
-* Corpus design and text encoding <!-- .element: class="fragment" data-fragment-index="1" -->
-* Topic Modeling <!-- .element: class="fragment" data-fragment-index="2" -->
-* Modeling results as Linked Open Data <!-- .element: class="fragment" data-fragment-index="3" -->
-
+#### Die TDM-Schranke
+* erlaubt ist:  <!-- .element: class="fragment" data-fragment-index="1" -->
+  * das Erstellen von Korpora aus Werken jedweder Art für das TDM <!-- .element: class="fragment" data-fragment-index="2" -->
+  * einschließlich aller für Korpusbildung und das anschließende TDM erforderlichen Bearbeitungs- und Vervielfältigungshandlungen <!-- .element: class="fragment" data-fragment-index="3" -->
+  * einschließlich Normalisieren, Strukturieren, Kategorisieren, Annotieren <!-- .element: class="fragment" data-fragment-index="4" -->
+* unter folgenden Voraussetzungen:  <!-- .element: class="fragment" data-fragment-index="5" -->
+  * man verfolgt nichtkommerzielle wissenschaftlicher Forschung <!-- .element: class="fragment" data-fragment-index="6" -->
+  * man hat rechtmäßigen Zugang zum Ursprungsmaterial <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
-#### Building a Corpus
-* Aim: 200 volumes of novels (1750-1800)  <!-- .element: class="fragment" data-fragment-index="1" -->
-* Sources: double keying, OCR, portals   <!-- .element: class="fragment" data-fragment-index="2" -->
-* Corpus composition: decades and narrative forms  <!-- .element: class="fragment" data-fragment-index="3" -->  
-* Current pilot corpus: ca. 80 volumes   <!-- .element: class="fragment" data-fragment-index="4" -->  
-* Text encoding <!-- .element: class="fragment" data-fragment-index="5" -->
-  * Files are encoded in XML-TEI <!-- .element: class="fragment" data-fragment-index="6" -->
-  * Modeled following the ELTeC schema <!-- .element: class="fragment" data-fragment-index="7" -->
-
+#### Einschränkungen der TDM-Schranke
+* rechtmäßiger Zugang zu Materialien wird vorausgesetzt, nicht automatisch gewährt  <!-- .element: class="fragment" data-fragment-index="1" -->
+* kein Recht auf Umgehung etwaiger technischer Schutzmaßnahmen <!-- .element: class="fragment" data-fragment-index="2" -->
+* Korpus muss nach Ende des Projekts an eine Bibliothek abgegeben werden <!-- .element: class="fragment" data-fragment-index="3" -->
+* Korpus kann nur für Qualitätsprüfung zugänglich gemacht werden, nicht für Anschlussforschung <!-- .element: class="fragment" data-fragment-index="4" -->
+* Änderungsverbot, Vergütungspflicht und Pflicht zu Quellenangaben sind zu beachten <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
-#### Topic Modeling
-<a href="img/tm_blei.png"><img height="500" src="img/tm_blei.png"></img></a>
-
-
----
-#### First results
-
-
----
-#### Modeling als LOD 
-<br/>
-
-* Candide HAS_TOPIC 't001_travel' (etc.) <!-- .element: class="fragment" data-fragment-index="1" -->
-* Integration into the database of statements <!-- .element: class="fragment" data-fragment-index="2" -->
-
-
----
-### (B) Named Entity Recognition
-
+#### Vier Lösungsansätze
+1. Zugang zu lizenzierten Inhalten über eine API; <!-- .element: class="fragment" data-fragment-index="1" -->
+1. Nutzung von Analyseplattformen;  <!-- .element: class="fragment" data-fragment-index="2" -->
+1. die Forschung im "closed room" <!-- .element: class="fragment" data-fragment-index="3" -->
+1. Arbeit mit abgeleiteten Textformaten <!-- .element: class="fragment" data-fragment-index="4" -->
 
 
 --
-## (3) Modeling Literary Historiography
-
----
-### (A) Extracting Statements
-* Define annotation layer with statement types
-* Manually annotate examples of statements
-* Learn to automatically identify instances
+## (2) Abgeleitete Textformate: Vorbilder
 
 
 ---
-### (B) Modeling Historiograohy 
-* Which types of statements are necessary?
-* What relations to these types have?
-* How do we create consensus?
+#### CrossAsia N-Gram Service
+<img src="img/cangs.png" height="400"/>
 
+* 13.000 Texte
+* https://crossasia.org/service/crossasia-lab/crossasia-n-gram-service/
+
+
+---
+#### CrossAsia N-Gram Service
+<a href="img/cangs-txt.png"><img src="img/cangs-txt.png" height="500"/></a>
+
+
+---
+#### Stylo for R Datasets
+<img src="img/csg.png" height="400"/>
+
+* mehrere Dutzend Texte
+* https://github.com/computationalstylistics/stylo/tree/master/data
+
+
+---
+#### Stylo for R Datasets 
+<a href="img/lee-tdm.png"><img src="img/lee-tdm.png" height="500"/></a>
+
+
+---
+#### HathiTrust Extracted Features Dataset
+<a href="img/htrc.png"><img src="img/htrc.png" height="400"/></a>
+
+* 15.7 Millionen Bände (!)
+* https://analytics.hathitrust.org/datasets
+
+---
+#### HathiTrust Extracted Features Dataset
+<a href="img/htrc2.png"><img src="img/htrc2.png" height="500"/></a>&nbsp;&nbsp;<a href="img/htrc1.png"><img src="img/htrc1.png" height="500"/></a>
+
+---
+#### Weitere Anbieter
+* Leipzig Corpora Collection <!-- .element: class="fragment" data-fragment-index="1" -->
+  * https://wortschatz.uni-leipzig.de/en/download <!-- .element: class="fragment" data-fragment-index="1" -->
+  * 250 Sprachen, je 1 Million Sätze <!-- .element: class="fragment" data-fragment-index="2" -->
+  * zufällige Samples von ganzen Sätzen <!-- .element: class="fragment" data-fragment-index="3" -->
+* Open Super-large Crawled ALMAnaCH coRpus (OSCAR) <!-- .element: class="fragment" data-fragment-index="4" -->
+  * https://oscar-corpus.com/ <!-- .element: class="fragment" data-fragment-index="4" -->
+  * 160 Sprachen, zwischen 19 Tokens und 250 Billionen Tokens  <!-- .element: class="fragment" data-fragment-index="5" -->
+  * randomisierte Reihenfolge der Zeichen   <!-- .element: class="fragment" data-fragment-index="6" -->
+
+
+--
+## (3) Abgeleitete Textformate: Prinzip
+
+---
+### Definition
+><small>"Ausgangspunkt sind Bestände urheberrechtlich geschützter Texte (die Ausgangstexte, im Urheberrecht als 'Ursprungsmaterial' bezeichnet), zu denen eine Institution legalen Zugang hat. Diese Textbestände werden durch die Anwendung von Verarbeitungsroutinen, die einerseits eine gezielte Informationsanreicherung (u.a. durch Annotation), andererseits auch eine gezielte Informationsreduktion (u.a. durch Randomisierung oder Löschung) darstellen, in sogenannte abgeleitete Textformate verwandelt. Diese abgeleiteten Textbestände stehen außerhalb des Anwendungsgebiets des Urheberrechtes."</small>
+
+---
+#### Modell von Text
+* Text als gegliederte Zeichensequenz <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Token <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Segment <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Gesamttext <!-- .element: class="fragment" data-fragment-index="1" -->
+* Tokens als symbolische Elemente  <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Wortform <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Lemma <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Wortart <!-- .element: class="fragment" data-fragment-index="2" -->
+  * morpho-syntaktische Funktion <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Bedeutung <!-- .element: class="fragment" data-fragment-index="2" -->
+  * syntaktische Relationen <!-- .element: class="fragment" data-fragment-index="2" -->
+* Text mit Sequenzinformation  <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Position der Tokens im Segment/Text <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Position der Segmente im Text <!-- .element: class="fragment" data-fragment-index="3" -->
+
+
+---
+#### Anreichung und Reduktion von Informationen
+* Gezielte Anreicherung <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Lemma <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Wortart <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Bedeutung <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Segmentierung <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Häufigkeit <!-- .element: class="fragment" data-fragment-index="1" -->
+* Gezielte Reduktion  <!-- .element: class="fragment" data-fragment-index="2" -->
+  * bestimmte Eigenschaften der Tokens <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Sequenzinformation <!-- .element: class="fragment" data-fragment-index="2" -->
+
+
+---
+#### Parameter
+* welche Anreicherung findet statt <!-- .element: class="fragment" data-fragment-index="1" -->
+* Segmentierung und Segmentlänge <!-- .element: class="fragment" data-fragment-index="1" -->
+* welche Reduktion findet statt  <!-- .element: class="fragment" data-fragment-index="1" -->
+
+
+---
+### Kriterien der DH
+* Nützlichkeit für eine Reihe einschlägigen Verfahren, u.a.: 
+  * Stilometrie
+  * Distinktive Merkmale
+  * Topic Modeling
+  * Sentiment Analyse
+  * Text Re-Use  
+  * Netzwerkanalyse
+
+
+---
+### Kriterien der Rechtswissenschaften
+* Kein Werkgenuss möglich <!-- .element: class="fragment" data-fragment-index="1" -->
+* Keine Wiedererkennbarkeit möglich <!-- .element: class="fragment" data-fragment-index="2" -->
+* Keine Rekonstruierbarkeit möglich <!-- .element: class="fragment" data-fragment-index="3" -->
+
+
+--
+## (4) Abgeleitete Textformate: Beispiele
+
+---
+#### Code und Daten
+* Textbeispiele (Englisch, Deutsch, Französisch)
+* Python-Skripte, die Textformate generieren
+* Beispieldateien für Textformate
+* Repository: https://github.com/dh-trier/tmr
+
+---
+#### Textbeispiel *Effi Briest*
+><small>In Front des schon seit Kurfürst Georg Wilhelm von der Familie von Briest bewohnten Herrenhauses zu Hohen-Cremmen fiel heller Sonnenschein auf die mittagsstille Dorfstraße, während nach der Park- und Gartenseite hin ein rechtwinklig angebauter Seitenflügel einen breiten Schatten erst auf einen weiß und grün quadrierten Fliesengang und dann über diesen hinaus auf ein großes, in seiner Mitte mit einer Sonnenuhr und an seinem Rande mit Canna indica und Rhabarberstauden besetztes Rondell warf. Einige zwanzig Schritte weiter, in Richtung und Lage genau dem Seitenflügel entsprechend, lief eine ganz in kleinblättrigem Efeu stehende, nur an einer Stelle von einer kleinen weißgestrichenen Eisentür unterbrochene Kirchhofsmauer, hinter der der Hohen-Cremmener Schindelturm mit seinem blitzenden, weil neuerdings erst wieder vergoldeten Wetterhahn aufragte. Fronthaus, Seitenflügel und Kirchhofsmauer bildeten ein einen kleinen Ziergarten umschließendes Hufeisen, an dessen offener Seite man eines Teiches mit Wassersteg und angeketteltem Boot und dicht daneben einer Schaukel gewahr wurde, deren horizontal gelegtes Brett zu Häupten und Füßen an je zwei Stricken hing – die Pfosten der Balkenlage schon etwas schief stehend. Zwischen Teich und Rondell aber und die Schaukel halb versteckend standen ein paar mächtige alte Platanen. <br/>(Theodor Fontane, Effi Briest, 1896)</small>
+
+---
+#### Einfache Term-Dokument-Matrix
+* token-basiertes Format <!-- .element: class="fragment" data-fragment-index="1" -->
+* einzeltext-basiertes Format <!-- .element: class="fragment" data-fragment-index="2" -->
+* Token kann Wortform oder Lemma sein (= Parameter) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Tokens sind annotiert (Annotation = Parameter)  <!-- .element: class="fragment" data-fragment-index="4" -->
+* Häufigkeit der Tokens <!-- .element: class="fragment" data-fragment-index="5" -->
+* keinerlei Sequenzinformation <!-- .element: class="fragment" data-fragment-index="6" -->
+* eine Datei pro Text <!-- .element: class="fragment" data-fragment-index="7" -->
+
+---
+#### Einfache Term-Dokument-Matrix
+<img src="img/eb1-tdm.png" height="450"/></a>
+
+
+---
+#### Segmentweise Aufhebung der lokalen Sequenzinformation
+* token-basiertes Format <!-- .element: class="fragment" data-fragment-index="1" -->
+* einzeltext-basiertes Format <!-- .element: class="fragment" data-fragment-index="2" -->
+* Tokens sind annotiert (Annotation = Parameter)  <!-- .element: class="fragment" data-fragment-index="3" -->
+* Text ist segmentiert (Segmentlänge = Parameter) <!-- .element: class="fragment" data-fragment-index="4" -->
+* Reihenfolge der Tokens innerhalb des Segments ist randomisiert <!-- .element: class="fragment" data-fragment-index="5" -->
+* Reihenfolge der Segmente im Text bleibt erhalten <!-- .element: class="fragment" data-fragment-index="6" -->
+* eine Datei pro Text <!-- .element: class="fragment" data-fragment-index="7" -->
+
+---
+#### Segmentweise Aufhebung der lokalen Sequenzinformation
+<img src="img/eb-src20.png" height="450"/></a>
+
+
+---
+#### Selektive Reduktion der Token-Information
+* token-basiertes Format <!-- .element: class="fragment" data-fragment-index="1" -->
+* einzeltext-basiertes Format <!-- .element: class="fragment" data-fragment-index="2" -->
+* Tokens werden POS annotiert <!-- .element: class="fragment" data-fragment-index="3" -->
+* Selektive Ersetzung von Tokens durch POS (= Parameter) <!-- .element: class="fragment" data-fragment-index="4" -->
+* eine Datei pro Text <!-- .element: class="fragment" data-fragment-index="5" -->
+
+---
+#### Selektive Reduktion der Token-Information
+<img src="img/eb1-tkn-mixed.png" height="450"/></a>
+
+
+---
+#### Selektive Reduktion mit Wort-Vektoren
+* token-basiertes Format <!-- .element: class="fragment" data-fragment-index="1" -->
+* erfordert Trainingskorpus <!-- .element: class="fragment" data-fragment-index="2" -->
+* Anreichung: POS, Wordvektor <!-- .element: class="fragment" data-fragment-index="3" -->
+* Reduktion: Wortform <!-- .element: class="fragment" data-fragment-index="4" -->
+* eine Datei pro Text <!-- .element: class="fragment" data-fragment-index="5" -->
+
+---
+#### Selektive Reduktion mit Wort-Vektoren
+<img src="img/eb-vectors.png" height="400"/></a>
+
+
+---
+### N-Gramm-Häufigkeiten
+* N-Gramme sind Sequenzen aufeinanderfolgender Tokens <!-- .element: class="fragment" data-fragment-index="1" -->
+* textübergreifendes Format <!-- .element: class="fragment" data-fragment-index="2" -->
+* Anreicherung: bspw. POS-Annotation <!-- .element: class="fragment" data-fragment-index="3" -->
+* Reduktion: seltene N-Gramme; Zuordnung zu Einzeltext <!-- .element: class="fragment" data-fragment-index="4" -->
+* Häufigkeit über mehrere Texte hinweg <!-- .element: class="fragment" data-fragment-index="5" -->
+* Aggregation nach Jahr, Textsorte, Varietät, Autor*in, etc. <!-- .element: class="fragment" data-fragment-index="6" -->
+
+---
+#### N-Gramm-Häufigkeiten
+<img src="img/google-trigrams.png" height="400"/></a>
+
+* Google Ngrams: Trigramme, Englisch, pro Jahr 
 
 
 
 --
-## (4) A network of information
-
-
+## Fazit
 
 ---
-### Bibliography and Novels
-
-* The 'Bibliographie du genre romanesque' contains information on setting and theme/tone <!-- .element: class="fragment" data-fragment-index="1" -->
-* The 'novel analysis' extracts place names and topics <!-- .element: class="fragment" data-fragment-index="2" -->
-* Relations <!-- .element: class="fragment" data-fragment-index="3" -->
-    * 
-
+#### Überblick
+<img src="img/uebersicht.png" height="500"/></a>
 
 ---
-<a href="img/bgrf-Candide.png"><img height="500" src="img/bgrf-Candide.png"></img></a>
-<small>
-(Quelle: Martin, Frautschi, Mylne: Bibliographie<br/> du genre romanesque 1751-1800, 1977, S. 60)</small>
-
-
----
-### Teilprojekt Literaturgeschichten
-
-* Grundlage sind moderne Literaturgeschichten, bspw. Erich Köhler, Aufklärung, 1984 <!-- .element: class="fragment" data-fragment-index="1" -->
-* Fragen <!-- .element: class="fragment" data-fragment-index="2" -->
-    * Dürfen diese Texte analysiert werden?
-    * Dürfen die relevanten Sätze in das Wissenssystem integriert werden?
-
----
-### Teilprojekt Romane
-
-* Grundlage sind Romane aus der Zeit 1750-1800  <!-- .element: class="fragment" data-fragment-index="1" -->
-* Fragen  <!-- .element: class="fragment" data-fragment-index="2" -->
-    * Dürfen die Originalausgaben digitalisiert und publiziert werden?
-    * Was ist, wenn moderne Ausgaben verwendet werden sollen?  
-    * Können wir Texte von Project Gutenberg verwenden?
-
+#### Agenda
+* Standardisierung der Formate (DH-Community)  <!-- .element: class="fragment" data-fragment-index="1" -->
+* Urheberrechtliche Prüfung der Formate (Rechtswissenschaften) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Zertifizierung der Erstellungsprozesse (Bibliotheken, Infrastrukturanbieter) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Publikation von Beipieldatensätzen (DH-Community, Bibliotheken) <!-- .element: class="fragment" data-fragment-index="4" -->
+* Benchmarking der Formate (DH und Informatik) <!-- .element: class="fragment" data-fragment-index="5" -->
 
 
 
